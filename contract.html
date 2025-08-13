@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(0, 255, 255);
+      margin: 0;
+      padding: 5vh 5vw;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgb(0, 150, 255);;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #222;
+      transition: background-color 0.3s;
+
+      /* allow wrapping and breaking long text */
+      flex-wrap: wrap;
+      word-break: break-all;
+    }
+
+    .contact-option:hover {
+      background-color: #ffe6cc;
+    }
+
+    .contact-option span {
+      font-weight: bold;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+    }
+
+    /* Mobile-specific tweaks (optional) */
+    @media (max-width: 600px) {
+      .contact-option {
+        gap: 0.5rem;
+      }
+      .contact-option span {
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+
+    <div class="contact-options">
+    <a class="contact-option" target="_blank" 
+   href="https://mail.google.com/mail/?view=cm&to=shivamgairola30@gmail.com&su=Hello&body=I%20wanted%20to%20get%20in%20touch.">
+  
+
+        📧 <span>Email Us</span> — shivamgairola30@gmail.com
+      </a>
+
+      <a class="contact-option" href="tel:918954159979">
+        📞 <span>Call Us</span> — 8954159979
+      </a>
+
+      <a class="contact-option" href="https://wa.me/918954159979?text=Hi%20there!" target="_blank">
+        💬 <span>Chat on WhatsApp</span> — 8954159979
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
