@@ -277,6 +277,56 @@
     flex-shrink: 0; /* prevents links from squishing */
   }
 }
+/* --- Mobile Navbar Fix (real-device scroll) --- */
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Inner scroll container */
+.nav-scroll {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;              /* enables touch scroll */
+  white-space: nowrap;
+  width: 100%;
+  padding: 0 20px;
+  -webkit-overflow-scrolling: touch; /* smooth scroll */
+}
+
+.nav-scroll::-webkit-scrollbar {
+  display: none; /* hides scrollbar */
+}
+
+.nav-scroll a {
+  flex-shrink: 0;
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-scroll a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-scroll .brand {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: auto;
+}
 
 
   </style>
