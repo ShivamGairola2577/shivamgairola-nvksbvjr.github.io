@@ -259,6 +259,24 @@
   margin-top: 10px; /* small top margin so text isn't stuck */
 }
 
+/* --- Mobile Navbar Fix (scrollable only on mobile) --- */
+@media (max-width: 768px) {
+  nav {
+    position: sticky;
+    top: 0;
+    overflow-x: auto;           /* allows sideways scroll */
+    white-space: nowrap;        /* keeps links in one line */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  }
+
+  nav::-webkit-scrollbar {
+    display: none; /* optional: hide scrollbar for cleaner look */
+  }
+
+  nav a {
+    flex-shrink: 0; /* prevents links from squishing */
+  }
+}
 
 
   </style>
@@ -315,7 +333,7 @@
       Familiar with version control (Git) and CI/CD practices for collaborative development.
     </div>
     <div class="cert-box">
-  <strong>AWS Certified Cloud Practitioner</strong><br>
+    <strong>AWS Certified Cloud Practitioner</strong><br>
   Gained foundational knowledge of AWS cloud concepts, services, and global infrastructure.
   Proficient in understanding compute, storage, networking, and database offerings on AWS.
   Skilled in cloud security fundamentals, shared responsibility model, and compliance basics.
@@ -378,4 +396,3 @@
 
 </body>
 </html>
-
