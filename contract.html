@@ -5,28 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us</title>
   <style>
+
+    /* SMOOTH PAGE FADE */
     body {
       font-family: Arial, sans-serif;
-      background-color: rgb(0, 255, 255);
+      background: linear-gradient(135deg, #02ffff, #007bff);
       margin: 0;
-      padding: 5vh 5vw;
+      padding: 6vh 5vw;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
+    /* FLOATING CARD EFFECT */
     .contact-container {
       max-width: 600px;
       margin: 0 auto;
-      background: rgb(0, 150, 255);;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+      animation: slideUp 1s ease-out forwards, floatCard 4s infinite ease-in-out alternate;
     }
 
+    /* TYPEWRITER TITLE */
     h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 1rem;
+      width: fit-content;
+      margin: auto;
+      font-size: 30px;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid black;
+      animation: typing 3.5s steps(25), blink 0.6s infinite;
     }
 
+    /* CONTACT LIST */
     .contact-options {
       display: flex;
       flex-direction: column;
@@ -34,35 +47,90 @@
       margin-top: 2rem;
     }
 
+    /* BUTTON STYLING + ANIMATION */
     .contact-option {
       display: flex;
       align-items: center;
       gap: 1rem;
       background-color: white;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       color: #222;
-      transition: background-color 0.3s;
-
-      /* allow wrapping and breaking long text */
       flex-wrap: wrap;
       word-break: break-all;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s, background .4s;
+      opacity: 0;
+      animation: fadeUp 0.8s ease-in-out forwards;
+      position: relative;
+      overflow: hidden;
     }
 
+    /* Staggered Timing */
+    .contact-option:nth-child(1) { animation-delay: .4s; }
+    .contact-option:nth-child(2) { animation-delay: .6s; }
+    .contact-option:nth-child(3) { animation-delay: .8s; }
+
+    /* HOVER: ROTATE + LIFT + GLOW */
     .contact-option:hover {
-      background-color: #ffe6cc;
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      background: #ffedcc;
     }
 
-    .contact-option span {
-      font-weight: bold;
+    /* CLICK RIPPLE EFFECT */
+    .contact-option:active::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      left: -50%;
+      top: -50%;
+      animation: ripple .5s ease-out forwards;
     }
 
-    .contact-icon {
-      font-size: 1.5rem;
+    @keyframes ripple {
+      from { transform: scale(0); opacity: 1; }
+      to { transform: scale(1.3); opacity: 0; }
     }
 
-    /* Mobile-specific tweaks (optional) */
+    /* Floating Motion */
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    /* Typewriter */
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Page Fade */
+    @keyframes fadeIn {
+      from { opacity: 0; } 
+      to { opacity: 1; }
+    }
+
+    /* Slide In */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(60px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE FIX */
     @media (max-width: 600px) {
       .contact-option {
         gap: 0.5rem;
@@ -71,28 +139,28 @@
         white-space: nowrap;
       }
     }
+
   </style>
 </head>
 <body>
 
   <div class="contact-container">
-    <h1>Contact Us</h1>
+    <h1>📞 Contact Me</h1>
 
     <div class="contact-options">
-    <a class="contact-option" target="_blank" 
-   href="https://mail.google.com/mail/?view=cm&to=shivamgairola30@gmail.com&su=Hello&body=I%20wanted%20to%20get%20in%20touch.">
-  
 
-        📧 <span>Email Us</span> — shivamgairola30@gmail.com
+      <a class="contact-option" target="_blank" href="https://mail.google.com/mail/?view=cm&to=shivamgairola30@gmail.com&su=Hello&body=I%20wanted%20to%20get%20in%20touch.">
+        📧 <span>Email</span> — shivamgairola30@gmail.com
       </a>
 
       <a class="contact-option" href="tel:918954159979">
-        📞 <span>Call Us</span> — 8954159979
+        📞 <span>Call</span> — 8954159979
       </a>
 
       <a class="contact-option" href="https://wa.me/918954159979?text=Hi%20there!" target="_blank">
-        💬 <span>Chat on WhatsApp</span> — 8954159979
+        💬 <span>WhatsApp</span> — 8954159979
       </a>
+
     </div>
   </div>
 
